@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 export default function KnotworkComparison() {
   return (
     <section className="py-20 px-6 bg-background">
@@ -61,11 +63,22 @@ export default function KnotworkComparison() {
             $ knotty run auth-flow.knot
           </code>
         </div>
-
         {/* Joke */}
         <p className="mt-8 text-center text-muted-foreground italic">
           Knotty does not judge your knots.
         </p>
+
+        {/* TUI */}
+        <div className="relative aspect-video rounded-xl overflow-hidden border border-border shadow-2xl mt-12">
+          <Image
+            src="/tui.png"
+            alt="Knotty CLI"
+            fill
+            className="object-cover"
+          />
+        </div>
+
+
       </div>
     </section>
   )

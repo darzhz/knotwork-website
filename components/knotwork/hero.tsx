@@ -14,9 +14,9 @@ export default function KnotworkHero() {
         {/* Logo and Thread visualization */}
         <div className="mb-8 flex flex-col items-center gap-6">
           <div className="w-24 h-24 relative opacity-90 drop-shadow-sm">
-            <Image src="/knotwork.svg" alt="Knotwork Logo" fill className="object-contain" />
+            <Image src="/knotwork.svg" alt="Knotwork Logo" fill className="object-contain fill-foreground" />
           </div>
-          <ThreadNode />
+          {/* <ThreadNode /> */}
         </div>
 
         <h1 className="text-6xl md:text-7xl font-bold tracking-tight mb-6 text-foreground">

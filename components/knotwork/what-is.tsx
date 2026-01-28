@@ -38,7 +38,7 @@ export default function KnotworkWhat() {
 
           <div className="relative aspect-video rounded-xl overflow-hidden border border-border shadow-2xl">
             <Image
-              src="/Screenshot from 2026-01-28 20-12-37.png"
+              src="/image.png"
               alt="Knotwork Visual Editor"
               fill
               className="object-cover"
