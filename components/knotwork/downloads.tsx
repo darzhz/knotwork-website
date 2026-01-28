@@ -8,26 +8,26 @@ export default function KnotworkDownloads() {
       name: 'Windows',
       icon: '◆',
       downloads: [
-        { label: '.exe Installer', link: '#' },
-        { label: 'Portable .exe', link: '#' },
+        { label: '.exe Installer', link: '#', disabled: true },
+        { label: 'Portable .exe', link: '#', disabled: true },
       ],
     },
     {
       name: 'macOS',
       icon: '◇',
       downloads: [
-        { label: 'Universal Binary', link: '#' },
-        { label: 'Intel', link: '#' },
-        { label: 'Apple Silicon', link: '#' },
+        { label: 'Universal Binary', link: '#', disabled: true },
+        { label: 'Intel', link: '#', disabled: true },
+        { label: 'Apple Silicon', link: '#', disabled: true },
       ],
     },
     {
       name: 'Linux',
       icon: '▢',
       downloads: [
-        { label: 'AppImage', link: '#' },
-        { label: 'Debian (.deb)', link: '#' },
-        { label: 'RedHat (.rpm)', link: '#' },
+        { label: 'Debian (.deb)', link: 'https://github.com/darzhz/flowjo/releases/download/0.1.0/Knotwork_0.1.0_amd64.deb', disabled: false },
+        { label: 'AppImage', link: '#', disabled: true },
+        { label: 'RedHat (.rpm)', link: '#', disabled: true },
       ],
     },
   ]
@@ -53,11 +53,20 @@ export default function KnotworkDownloads() {
                 {platform.downloads.map((download) => (
                   <a
                     key={download.label}
-                    href={download.link}
-                    className="flex items-center gap-2 px-4 py-2 bg-background rounded border border-border hover:border-accent hover:text-accent transition-all text-foreground text-sm font-semibold"
+                    href={download.disabled ? undefined : download.link}
+                    onClick={(e) => download.disabled && e.preventDefault()}
+                    className={`flex items-center gap-2 px-4 py-2 rounded border transition-all text-sm font-semibold ${download.disabled
+                        ? 'bg-muted/50 border-border text-muted-foreground cursor-not-allowed'
+                        : 'bg-background border-border hover:border-accent hover:text-accent text-foreground'
+                      }`}
                   >
                     <Download className="w-4 h-4" />
                     {download.label}
+                    {download.disabled && (
+                      <span className="ml-auto text-[10px] uppercase tracking-wider opacity-60">
+                        Coming Soon
+                      </span>
+                    )}
                   </a>
                 ))}
               </div>
