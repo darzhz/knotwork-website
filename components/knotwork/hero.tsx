@@ -2,6 +2,7 @@
 
 import { ArrowRight, Github } from 'lucide-react'
 import ThreadNode from '@/components/knotwork/thread-node'
+import Image from 'next/image'
 
 export default function KnotworkHero() {
   return (
@@ -10,8 +11,11 @@ export default function KnotworkHero() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
       <div className="relative z-10 max-w-2xl text-center">
-        {/* Thread node visualization */}
-        <div className="mb-12 flex justify-center">
+        {/* Logo and Thread visualization */}
+        <div className="mb-8 flex flex-col items-center gap-6">
+          <div className="w-24 h-24 relative opacity-90 drop-shadow-sm">
+            <Image src="/knotwork.svg" alt="Knotwork Logo" fill className="object-contain" />
+          </div>
           <ThreadNode />
         </div>
 

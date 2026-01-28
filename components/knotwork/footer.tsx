@@ -1,15 +1,21 @@
 'use client'
 
 import { Github } from 'lucide-react'
+import Image from 'next/image'
 
 export default function KnotworkFooter() {
   return (
     <footer className="border-t border-border bg-background">
       <div className="max-w-4xl mx-auto px-6 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-8">
-          <div>
-            <h3 className="text-lg font-bold text-foreground mb-2">Knotwork</h3>
-            <p className="text-muted-foreground text-sm">Visual API testing. No loose ends.</p>
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 relative opacity-80">
+              <Image src="/knotwork.svg" alt="Knotwork" fill className="object-contain" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-0 leading-tight">Knotwork</h3>
+              <p className="text-muted-foreground text-xs">Visual API testing. No loose ends.</p>
+            </div>
           </div>
 
           <div className="flex gap-6">

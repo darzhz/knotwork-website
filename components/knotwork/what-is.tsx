@@ -1,12 +1,14 @@
 'use client'
 
+import Image from 'next/image'
+
 export default function KnotworkWhat() {
   return (
     <section className="py-20 px-6 bg-secondary">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold mb-12 text-foreground">What is Knotwork?</h2>
 
-        <div className="space-y-8">
+        <div className="space-y-12">
           <p className="text-lg text-foreground leading-relaxed">
             Knotwork lets you design API tests by connecting small, focused knots into larger flows.
             <br />
@@ -32,6 +34,15 @@ export default function KnotworkWhat() {
                 Your test logic is explicit. No magic. No surprises.
               </p>
             </div>
+          </div>
+
+          <div className="relative aspect-video rounded-xl overflow-hidden border border-border shadow-2xl">
+            <Image
+              src="/Screenshot from 2026-01-28 20-12-37.png"
+              alt="Knotwork Visual Editor"
+              fill
+              className="object-cover"
+            />
           </div>
 
           <div className="border-l-4 border-accent pl-6 py-2">
